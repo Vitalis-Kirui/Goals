@@ -7,6 +7,12 @@
             <h1 class="text-center">My Goals</h1>
             <hr>
 
+            <!-- Goals list loop -->
+            <ul class="goalList" *ngFor="let goal of goals">
+                <li><strong>{{goal.name}}</strong></li>
+                {{goal.description}}
+            </ul>
+
         </div>
 
     </div>
