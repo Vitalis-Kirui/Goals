@@ -9,7 +9,7 @@
 
             <!-- Goals list loop -->
             <ul class="goalList" *ngFor="let goal of goals, let i = index">
-                <li><strong>{{goal.name | uppercase}}</strong></li>
+                <li appStrikethrough><strong>{{goal.name | uppercase}}</strong></li>
                 {{goal.description}} <br>
 
                 <app-goal-detail [goal]="goal" *ngIf="goal.showDescription"></app-goal-detail>
