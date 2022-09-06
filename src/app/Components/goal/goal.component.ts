@@ -16,6 +16,17 @@ export class GoalComponent implements OnInit {
     
   ]
 
+  //Delete button functionality
+  delete(index: number) {
+
+    let confirmation = confirm(`Are you sure you want to delete ${this.goals[index].name}?`)
+
+    if (confirmation) {
+      this.goals.splice(index , 1)
+    }
+    
+  }
+
   constructor() { }
 
   ngOnInit(): void {
