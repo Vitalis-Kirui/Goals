@@ -1,34 +1,43 @@
-<div class="container">
+<div class="container-fluid">
 
-    <div class="row">
-
-        <h1 class="text-center">MY GOALS</h1>
-        <hr>
-
-        <div class="col-md-6 goals">
-
-            <!-- Goals list loop -->
-            <ul class="goalList" *ngFor="let goal of goals, let i = index">
-                <li appStrikethrough><strong>{{goal.name | uppercase}}</strong></li>
-                {{goal.description}} <br>
-
-                <app-goal-detail [goal]="goal" *ngIf="goal.showDescription"></app-goal-detail>
-
-                <!-- Toggle details button -->
-                <button class="btn btn-outline-primary" (click)="toggleDetails(i)">Toggle Details</button>
-
-                <!-- Delete button -->
-                <button class = "btn btn-outline-danger" (click)="delete(i)">Delete goal</button>
-            </ul>
-
+    <div class="container">
+        <div class="row">
+        
+            <h1 class="text-center">MY GOALS</h1>
+            <hr>
+        
+            <div class="col-md-6 goals">
+        
+                <div class="goalsTitle">
+                    <h2 class="text-center">Goals</h2>
+                    <hr>
+                </div>
+        
+                <!-- Goals list loop -->
+                <ul class="goalList" *ngFor="let goal of goals, let i = index">
+                    <li appStrikethrough><strong>{{goal.name | uppercase}}</strong></li>
+                    {{goal.description}} <br>
+        
+                    <app-goal-detail [goal]="goal" *ngIf="goal.showDescription"></app-goal-detail>
+        
+                    <div class="buttons">
+                        <!-- Toggle details button -->
+                        <button class="btn btn-outline-primary" (click)="toggleDetails(i)">Toggle Details</button>
+        
+                        <!-- Delete button -->
+                        <button class="btn btn-outline-danger" (click)="delete(i)">Delete goal</button>
+                    </div>
+                </ul>
+        
+            </div>
+        
+            <div class="col-md-6 goalForm">
+                <!-- goal form -->
+                <app-form (addGoal)="addNewGoal($event)"></app-form>
+        
+            </div>
+        
         </div>
-
-        <div class="col-md-6 goalForm">
-            <!-- goal form -->
-            <app-form (addGoal)="addNewGoal($event)"></app-form>
-
-        </div>
-
     </div>
 
 </div>

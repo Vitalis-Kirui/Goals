@@ -7,15 +7,14 @@ hr{
 .goalList{
     margin-top: 5%;
     border: 2px green solid;
-    padding:10%;
+    padding:5%;
+    padding-left: 7%;
 }
 
 /* buttons */
 button{
     margin : 3px;
-    /* padding-top: 25px;
-    padding-bottom: 25px;
-    border-radius: 50% 50%; */
+    margin-top :2%;
 }
 
 .container{
@@ -24,4 +23,16 @@ button{
 
 .goalForm{
     padding-top: 2%;
+}
+
+.goalsTitle{
+    padding-top:4%;
+}
+
+.container{
+    background-color:rgb(229, 238, 238);
+}
+
+.container-fluid{
+    background-color:rgb(199, 218, 218);
 }
