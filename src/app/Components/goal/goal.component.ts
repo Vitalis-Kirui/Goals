@@ -27,6 +27,11 @@ export class GoalComponent implements OnInit {
     
   }
 
+  //See more details functionality
+  seeMore(index: number) {
+    
+  }
+
   constructor() { }
 
   ngOnInit(): void {

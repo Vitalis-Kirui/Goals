@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GoalComponent } from './Components/goal/goal.component';
 import { GoalDetailComponent } from './Components/goal-detail/goal-detail.component';
+import { DateCountPipe } from './Pipes/date-count.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     GoalComponent,
-    GoalDetailComponent
+    GoalDetailComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,

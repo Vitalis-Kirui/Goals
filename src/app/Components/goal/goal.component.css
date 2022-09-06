@@ -7,3 +7,11 @@ hr{
 .goalList{
     margin-top: 5%;
 }
+
+/* buttons */
+button{
+    margin : 3px;
+    /* padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 50% 50%; */
+}

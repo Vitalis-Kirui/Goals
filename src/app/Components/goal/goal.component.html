@@ -14,8 +14,11 @@
 
                 <app-goal-detail [goal]="goal"></app-goal-detail>
 
+                <!-- See more details button -->
+                <button class="btn btn-outline-primary" (click)="seeMore(i)">See More Details</button>
+
                 <!-- Delete button -->
-                <button class = "btn btn-outline-danger" (click)="delete(i)">Delete Goal</button>
+                <button class = "btn btn-outline-danger" (click)="delete(i)">Delete goal</button>
             </ul>
 
         </div>
