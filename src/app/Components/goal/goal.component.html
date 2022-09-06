@@ -10,12 +10,12 @@
             <!-- Goals list loop -->
             <ul class="goalList" *ngFor="let goal of goals, let i = index">
                 <li><strong>{{goal.name | uppercase}}</strong></li>
-                {{goal.description}}
+                {{goal.description}} <br>
 
-                <app-goal-detail [goal]="goal"></app-goal-detail>
+                <app-goal-detail [goal]="goal" *ngIf="goal.showDescription"></app-goal-detail>
 
                 <!-- See more details button -->
-                <button class="btn btn-outline-primary" (click)="seeMore(i)">See More Details</button>
+                <button class="btn btn-outline-primary" (click)="toggleDetails(i)">Toggle Details</button>
 
                 <!-- Delete button -->
                 <button class = "btn btn-outline-danger" (click)="delete(i)">Delete goal</button>

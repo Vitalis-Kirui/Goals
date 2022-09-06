@@ -28,8 +28,8 @@ export class GoalComponent implements OnInit {
   }
 
   //See more details functionality
-  seeMore(index: number) {
-    
+  toggleDetails(index: number) {
+    this.goals[index].showDescription = !this.goals[index].showDescription;
   }
 
   constructor() { }
