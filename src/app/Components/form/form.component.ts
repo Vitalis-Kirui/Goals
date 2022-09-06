@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Goal } from 'src/app/Classes/goal';
 
 @Component({
   selector: 'app-form',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+
+// Two way data binding
+  newGoal = new Goal(0, "", "", new Date());
 
   constructor() { }
 

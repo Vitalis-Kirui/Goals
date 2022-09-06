@@ -5,7 +5,7 @@
         <h1 class="text-center">MY GOALS</h1>
         <hr>
 
-        <div class="col-md-6">
+        <div class="col-md-6 goals">
 
             <!-- Goals list loop -->
             <ul class="goalList" *ngFor="let goal of goals, let i = index">
@@ -20,6 +20,12 @@
                 <!-- Delete button -->
                 <button class = "btn btn-outline-danger" (click)="delete(i)">Delete goal</button>
             </ul>
+
+        </div>
+
+        <div class="col-md-6 goalForm">
+            <!-- goal form -->
+            <app-form></app-form>
 
         </div>
 
