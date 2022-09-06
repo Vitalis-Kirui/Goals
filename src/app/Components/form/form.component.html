@@ -1,27 +1,48 @@
 <div class="container-fluid">
     <h2 class="text-center">Create a new Goal</h2>
     <hr>
-    <form #goalForm = "ngForm">
+    <form #goalForm= "ngForm">
         <div class="form-group fields">
 
             <label for="name"><strong>Name</strong></label>
-            <input type="text" required class="form-control" id="name" name="name" [(ngModel)] = "newGoal.name">
+            <input type="text" required class="form-control" id="name" name="name" [(ngModel)] = "newGoal.name" #name="ngModel">
+
+            <!-- Two way data binding -->
             {{newGoal.name}}
+
+            <!-- Field validation -->
+            <div class="validating text-danger" [hidden]="name. valid || name.pristine">
+                <p>Name is recquired.</p>
+            </div>
             <br>
 
         </div>
         <div class="form-group">
 
             <label for="description"><strong>Description</strong></label>
-            <textarea class="form-control" id="description" rows="4" required name="description" [(ngModel)] = "newGoal.description"></textarea>
+            <textarea class="form-control" id="description" rows="4" required name="description" [(ngModel)] = "newGoal.description" #description ="ngModel"></textarea>
+
+            <!-- Two way data binding -->
             {{newGoal.description}}
+
+            <!-- Field validation -->
+            <div class="text-danger" [hidden]="description.valid || description.pristine">
+                <p>Goal's description is recquired.</p>
+            </div>
             <br>
 
         </div>
         <div class="form-group">
             <label for="complete"><strong>Completion Date</strong> </label>
-            <input type='date' id="complete" required name="completionDate" [(ngModel)]= "newGoal.completionDate"> <br>
+            <input type='date' id="complete" required name="completionDate" [(ngModel)]= "newGoal.completionDate" #completionDate="ngModel"> <br>
+
+            <!-- Two way data binding -->
             {{newGoal.completionDate | date}}
+
+            <!-- Field validation -->
+            <div class="text-danger" [hidden]="completionDate.valid || completionDate.pristine">
+                <p>Completion date is recquired.</p>
+            </div>
 
         </div>
         <br>
