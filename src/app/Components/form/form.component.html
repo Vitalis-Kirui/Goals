@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h2 class="text-center">Create a new Goal</h2>
     <hr>
-    <form #goalForm= "ngForm">
+    <form #goalForm= "ngForm" (ngSubmit)="submitGoal()">
         <div class="form-group fields">
 
             <label for="name"><strong>Name</strong></label>
