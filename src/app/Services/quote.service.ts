@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Quote } from '../Classes/quote';
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class QuoteService {
     }
 
     let promise = new Promise<void>((resolve, reject) => {
-      this.http.get<ApiResponse | any>(environment.apiUrl).toPromise().then((response) => {
+      this.http.get<ApiResponse | any >(environment .apiUrl).toPromise().then((response) => {
 
         this.quote.quote = response.quote;
         this.quote.author = response.author;
@@ -32,7 +32,7 @@ export class QuoteService {
       },
         error => {
           this.quote.quote = "Angular is pretty amazing framework.";
-          this.quote.author = "Cheborgei Vitalis"
+          this.quote.author = "Cheborgei Vitalis";
 
           reject(error);
         }
