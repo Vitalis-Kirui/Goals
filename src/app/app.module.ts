@@ -12,6 +12,7 @@ import { FormComponent } from './Components/form/form.component';
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './Components/about/about.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
     StrikethroughDirective,
     FormComponent,
     AboutComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
