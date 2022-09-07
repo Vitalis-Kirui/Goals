@@ -36,3 +36,7 @@ button{
 .container-fluid{
     background-color:rgb(199, 218, 218);
 }
+
+.row{
+    padding-top:2%;
+}
