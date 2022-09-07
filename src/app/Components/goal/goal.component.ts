@@ -4,6 +4,7 @@ import { GoalService } from 'src/app/Services/goal.service';
 import { AlertService } from 'src/app/Services/alert.service';
 import { QuoteService } from 'src/app/Services/quote.service';
 import { Quote } from 'src/app/Classes/quote';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-goal',
@@ -15,14 +16,6 @@ export class GoalComponent implements OnInit {
   goals!: Goal[];
   
   quote !: Quote;
-
-  // goals: Goal[] = [
-    
-  //   new Goal(1, "Angular.", "Master angular for frontend purposes.", new Date(2022, 8, 30)),
-  //   new Goal(2, "Django.", "Master Django for Backend purposes.", new Date(2022, 9, 31)),
-  //   new Goal(3, "Projects.", "Do practice on personal projects and real clients projects.", new Date(2022, 11, 30))
-    
-  // ]
 
   //Delete button functionality
   delete(index: number) {
@@ -49,7 +42,12 @@ export class GoalComponent implements OnInit {
     this.goals.push(goal);
   }
 
-  constructor(private service: GoalService, private alert : AlertService, private quoteService : QuoteService) { 
+  //Open goal function
+  openGoal(id: number) {
+    this.router.navigate(['/goals', id]);
+  }
+
+  constructor(private service: GoalService, private alert : AlertService, private quoteService : QuoteService, private router : Router) { 
 
     this.goals = this.service.getGoals();
     
