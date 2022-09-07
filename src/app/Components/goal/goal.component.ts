@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Goal } from 'src/app/Classes/goal';
 import { GoalService } from 'src/app/Services/goal.service';
+import { AlertService } from 'src/app/Services/alert.service';
 
 @Component({
   selector: 'app-goal',
@@ -25,7 +26,8 @@ export class GoalComponent implements OnInit {
     let confirmation = confirm(`Are you sure you want to delete ${this.goals[index].name}?`)
 
     if (confirmation) {
-      this.goals.splice(index , 1)
+      this.goals.splice(index, 1);
+      this.alert.alertMe("The goal has been successfully deleted.")
     }
     
   }
@@ -43,7 +45,7 @@ export class GoalComponent implements OnInit {
     this.goals.push(goal);
   }
 
-  constructor(private service: GoalService) { 
+  constructor(private service: GoalService, private alert : AlertService) { 
 
     this.goals = this.service.getGoals();
     
