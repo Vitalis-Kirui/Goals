@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Goal } from 'src/app/Classes/goal';
+import { GoalService } from 'src/app/Services/goal.service';
 
 @Component({
   selector: 'app-goal-detail',
@@ -8,11 +10,18 @@ import { Goal } from 'src/app/Classes/goal';
 })
 export class GoalDetailComponent implements OnInit {
 
-  @Input() goal!: Goal;
+  goal: Goal | any;
+  
+  //passing parameters
+  // @Input() goal!: Goal;
 
-  constructor() { }
+  constructor(private service : GoalService, private route : ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    let id = Number(this.route.snapshot.paramMap.get('id'));
+    this.goal = this.service.getGoal(id);
+
   }
 
 }
