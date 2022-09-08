@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <h2 class="text-center">Create a new Goal</h2>
     <hr>
-    <form #goalForm= "ngForm" (ngSubmit)="submitGoal()" class="fields">
+    <form #goalForm= "ngForm" (ngSubmit)="submitGoal();" class="fields" >
         <div class="form-group">
 
             <label for="name"><strong>Name</strong></label>
@@ -47,7 +47,7 @@
         </div>
         <br>
 
-        <button type="submit" class="btn btn-outline-primary">Add Goal</button>
+        <button type="submit" class="btn btn-outline-primary" [disabled]="!goalForm.valid">Add Goal</button>
 
     </form>
 </div>
