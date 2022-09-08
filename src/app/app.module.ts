@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './Components/about/about.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { InputDetailsComponent } from './Components/input-details/input-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
     FormComponent,
     AboutComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    InputDetailsComponent
   ],
   imports: [
     BrowserModule,

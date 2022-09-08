@@ -18,12 +18,12 @@
                     <li appStrikethrough><strong>{{goal.name | uppercase}}</strong></li>
                     {{goal.description}} <br>
         
-                    <!-- <app-goal-detail [goal]="goal" *ngIf="goal.showDescription"></app-goal-detail> -->
-                    <app-goal-detail *ngIf="goal.showDescription"></app-goal-detail>
+                    <app-input-details [goal]="goal" *ngIf="goal.showDescription"></app-input-details>
+                    <!-- <app-goal-detail *ngIf="goal.showDescription"></app-goal-detail> -->
         
                     <div class="buttons">
                         <!-- Toggle details button -->
-                        <!-- <button class="btn btn-outline-primary" (click)="toggleDetails(i)">Toggle Details</button> -->
+                        <button class="btn btn-outline-primary" (click)="toggleDetails(i)">Toggle Details</button>
 
                         <!-- Open goal button -->
                         <button class="btn btn-outline-primary" (click)="openGoal(goal.id)">Open Goal</button>
