@@ -17,10 +17,6 @@ button{
     margin-top :2%;
 }
 
-.container{
-    margin-top : 3%;
-}
-
 .goalForm{
     padding-top: 2%;
 }
@@ -29,20 +25,8 @@ button{
     padding-top:4%;
 }
 
-.container{
-    background-color:rgb(229, 238, 238);
-}
-
-.container-fluid{
-    background-color:rgb(199, 218, 218);
-}
-
-.row{
-    padding-top:2%;
-}
-
 /* QUOTES SECTION */
 
 .quotes{
-    padding-bottom: 3%;
+    padding-top: 1%;
 }

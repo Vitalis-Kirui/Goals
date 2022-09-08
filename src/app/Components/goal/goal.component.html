@@ -1,67 +1,63 @@
-<div class="container-fluid">
+<div class="container">
+    <div class="row">
+    
+        <h1 class="text-center">MY GOALS</h1>
+        <hr>
+    
+        <div class="col-md-6 goals">
+    
+            <div class="goalsTitle">
+                <h2 class="text-center">Goals</h2>
+                <hr>
+            </div>
+    
+            <!-- Goals list loop -->
+            <ul class="goalList" *ngFor="let goal of goals, let i = index">
+                <li appStrikethrough><strong>{{goal.name | uppercase}}</strong></li>
+                {{goal.description}} <br>
+    
+                <app-input-details [goal]="goal" *ngIf="goal.showDescription"></app-input-details>
+                <!-- <app-goal-detail *ngIf="goal.showDescription"></app-goal-detail> -->
+    
+                <div class="buttons">
+                    <!-- Toggle details button -->
+                    <button class="btn btn-outline-primary" (click)="toggleDetails(i)">Toggle Details</button>
 
-    <div class="container">
-        <div class="row">
-        
-            <h1 class="text-center">MY GOALS</h1>
-            <hr>
-        
-            <div class="col-md-6 goals">
-        
-                <div class="goalsTitle">
-                    <h2 class="text-center">Goals</h2>
-                    <hr>
+                    <!-- Open goal button -->
+                    <button class="btn btn-outline-primary" (click)="openGoal(goal.id)">Open Goal</button>
+    
+                    <!-- Delete button -->
+                    <button class="btn btn-outline-danger" (click)="delete(i)">Delete goal</button>
                 </div>
-        
-                <!-- Goals list loop -->
-                <ul class="goalList" *ngFor="let goal of goals, let i = index">
-                    <li appStrikethrough><strong>{{goal.name | uppercase}}</strong></li>
-                    {{goal.description}} <br>
-        
-                    <app-input-details [goal]="goal" *ngIf="goal.showDescription"></app-input-details>
-                    <!-- <app-goal-detail *ngIf="goal.showDescription"></app-goal-detail> -->
-        
-                    <div class="buttons">
-                        <!-- Toggle details button -->
-                        <button class="btn btn-outline-primary" (click)="toggleDetails(i)">Toggle Details</button>
+            </ul>
+    
+        </div>
+    
+        <div class="col-md-6 goalForm">
+            <!-- goal form -->
+            <app-form (addGoal)="addNewGoal($event)"></app-form>
+    
+        </div>
+    
+    </div>
 
-                        <!-- Open goal button -->
-                        <button class="btn btn-outline-primary" (click)="openGoal(goal.id)">Open Goal</button>
-        
-                        <!-- Delete button -->
-                        <button class="btn btn-outline-danger" (click)="delete(i)">Delete goal</button>
-                    </div>
-                </ul>
-        
-            </div>
-        
-            <div class="col-md-6 goalForm">
-                <!-- goal form -->
-                <app-form (addGoal)="addNewGoal($event)"></app-form>
-        
-            </div>
-        
+    <!-- Quotes section -->
+
+    <div class="row">
+
+        <div class="col-md-2">
+
         </div>
 
-        <!-- Quotes section -->
+        <div class="col-md-8 text-center quotes">
 
-        <div class="row">
+            <p><strong>{{quote.quote}}</strong></p>
+            <hr>
+            <p><em>{{quote.author}}</em></p>
 
-            <div class="col-md-2">
+        </div>
 
-            </div>
-
-            <div class="col-md-8 text-center quotes">
-
-                <p><strong>{{quote.quote}}</strong></p>
-                <hr>
-                <p><em>{{quote.author}}</em></p>
-
-            </div>
-
-            <div class="col-md-2">
-
-            </div>
+        <div class="col-md-2">
 
         </div>
 
